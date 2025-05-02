@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Booking Website</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/old.css">
+    <!-- Custom CSS -->
+
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 d-flex align-items-center">
+                    <i class="fas fa-phone me-2"></i>
+                    <span>Telephone Enquiry: (+123) 123 456</span>
+                </div>
+                <div class="col-md-4 text-center social-icons d-none d-md-block">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="col-md-4 text-end settings-dropdown">
+                    <div class="d-inline-block me-3">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="settingsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-cog me-1"></i> Accounts
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingsDropdown">
+                                <li><a class="dropdown-item text-dark" href="#">Login</a></li>
+                                <li><a class="dropdown-item text-dark" href="#">Register</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-12">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h1 class="logo-text">Booking System</h1>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" class="form-control search-bar" placeholder="Search for properties, hotels, or destinations...">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-12">
+                    <div class="header-actions">
+                        <button class="header-action-btn" type="button">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button class="header-action-btn" type="button">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                        <button class="header-action-btn" type="button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">3</span>
+                        </button>
+                        <a href="#" class="btn login-btn">
+                            <i class="fas fa-user me-2"></i> Login
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <i class="fas fa-home me-1"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="realEstateDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-building me-1"></i> Real-estate
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="realEstateDropdown">
+                            <li><a class="dropdown-item" href="#">Buy Property</a></li>
+                            <li><a class="dropdown-item" href="#">Rent Property</a></li>
+                            <li><a class="dropdown-item" href="#">Sell Property</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Property Agents</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="travelDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-plane me-1"></i> Travel & Tours
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="travelDropdown">
+                            <li><a class="dropdown-item" href="#">Hotels</a></li>
+                            <li><a class="dropdown-item" href="#">Flights</a></li>
+                            <li><a class="dropdown-item" href="#">Vacation Packages</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Travel Guides</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-briefcase me-1"></i> Jobs
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-blog me-1"></i> Blogs
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-newspaper me-1"></i> News
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-envelope me-1"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Section with Carousel and Animated Boxes -->
+    <section class="container banner-section">
+        <div class="row">
+            <!-- Left Side: Carousel -->
+            <div class="col-lg-8">
+                <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" style="background-image: url('./image/a.jpeg');">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3 class="animate__animated animate__fadeInDown">Luxury Villas & Apartments</h3>
+                                <p class="animate__animated animate__fadeInUp">Discover our exclusive collection of premium properties.</p>
+                                <button class="btn btn-primary btn-sm animate__animated animate__fadeInUp animate__delay-1s">View Properties</button>
+                            </div>
+                        </div>
+                        <div class="carousel-item" style="background-image: url('./image/b.jpg');">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3 class="animate__animated animate__fadeInDown">Vacation Rentals</h3>
+                                <p class="animate__animated animate__fadeInUp">Find the perfect getaway for your next holiday.</p>
+                                <button class="btn btn-primary btn-sm animate__animated animate__fadeInUp animate__delay-1s">Explore Rentals</button>
+                            </div>
+                        </div>
+                        <div class="carousel-item" style="background-image: url('./image/a.jpeg">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3 class="animate__animated animate__fadeInDown">Commercial Properties</h3>
+                                <p class="animate__animated animate__fadeInUp">Premium office spaces and retail locations.</p>
+                                <button class="btn btn-primary btn-sm animate__animated animate__fadeInUp animate__delay-1s">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Right Side: 4 Animated Boxes (2x2 Grid) -->
+            <div class="col-lg-4">
+                <div class="row">
+                    <!-- Top Row -->
+                    <div class="col-6">
+                        <div class="feature-box fade-in-up" id="box1">
+                            <div class="feature-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h5 class="feature-title">Real Estate</h5>
+                            <p class="feature-text">Find your dream home</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="feature-box fade-in-down" id="box2">
+                            <div class="feature-icon">
+                                <i class="fas fa-hotel"></i>
+                            </div>
+                            <h5 class="feature-title">Hotels</h5>
+                            <p class="feature-text">Luxury accommodations</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Bottom Row -->
+                    <div class="col-6">
+                        <div class="feature-box fade-in-left" id="box3">
+                            <div class="feature-icon">
+                                <i class="fas fa-plane"></i>
+                            </div>
+                            <h5 class="feature-title">Flights</h5>
+                            <p class="feature-text">Best travel deals</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="feature-box fade-in-right" id="box4">
+                            <div class="feature-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <h5 class="feature-title">Car Rentals</h5>
+                            <p class="feature-text">Explore with freedom</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Browse by Category Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Browse by Category</h2>
+                <p>Explore our wide range of categories to find exactly what you're looking for</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="category-card">
+                        <img src="./image/a.jpeg" alt="Real Estate" class="category-img">
+                        <div class="category-overlay">
+                            <h5 class="category-title">Real Estate</h5>
+                            <p class="category-count">245 Listings</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="category-card">
+                        <img src="./image/b.jpg" alt="Hotels" class="category-img">
+                        <div class="category-overlay">
+                            <h5 class="category-title">Hotels</h5>
+                            <p class="category-count">157 Listings</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="category-card">
+                        <img src="./image/a.jpeg" alt="Restaurants" class="category-img">
+                        <div class="category-overlay">
+                            <h5 class="category-title">Restaurants</h5>
+                            <p class="category-count">98 Listings</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="category-card">
+                        <img src="./image/b.jpg" alt="Jobs" class="category-img">
+                        <div class="category-overlay">
+                            <h5 class="category-title">Jobs</h5>
+                            <p class="category-count">324 Listings</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="category-card">
+                        <img src="./image/a.jpeg" alt="Cars" class="category-img">
+                        <div class="category-overlay">
+                            <h5 class="category-title">Cars</h5>
+                            <p class="category-count">112 Listings</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="category-card">
+                        <img src="./image/b.jpg" alt="Events" class="category-img">
+                        <div class="category-overlay">
+                            <h5 class="category-title">Events</h5>
+                            <p class="category-count">87 Listings</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="category-card">
+                        <img src="./image/a.jpeg" alt="Education" class="category-img">
+                        <div class="category-overlay">
+                            <h5 class="category-title">Education</h5>
+                            <p class="category-count">76 Listings</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="category-card">
+                        <img src="./image/b.jpg" alt="Services" class="category-img">
+                        <div class="category-overlay">
+                            <h5 class="category-title">Services</h5>
+                            <p class="category-count">195 Listings</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Banner Section -->
+    <section>
+        <div class="container">
+            <div class="ad-banner">
+                <img src="./image/ads.webp" alt="Special Offer" class="img-fluid">
+                <div class="ad-overlay">
+                    <h3 class="ad-title">Special Summer Offer</h3>
+                    <p class="ad-text">Get 25% off on all premium listings. Limited time offer, don't miss out!</p>
+                    <a href="#" class="ad-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Job Opportunities Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Latest Job Opportunities</h2>
+                <p>Find your dream job from our latest listings</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="job-card">
+                        <div class="job-header">
+                            <div class="job-logo">
+                                <img src="/placeholder.svg?height=60&width=60" alt="Company Logo">
+                            </div>
+                            <div class="job-title-container">
+                                <h3>Senior Web Developer</h3>
+                                <p class="job-company">Tech Solutions Inc.</p>
+                            </div>
+                        </div>
+                        <div class="job-details">
+                            <div class="job-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>New York, USA</span>
+                            </div>
+                            <div class="job-detail">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Full Time</span>
+                            </div>
+                            <div class="job-detail">
+                                <i class="fas fa-clock"></i>
+                                <span>Posted 2 days ago</span>
+                            </div>
+                        </div>
+                        <div class="job-tags">
+                            <span class="job-tag">JavaScript</span>
+                            <span class="job-tag">React</span>
+                            <span class="job-tag">Node.js</span>
+                        </div>
+                        <div class="job-footer">
+                            <span class="job-salary">$80,000 - $100,000</span>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="job-card">
+                        <div class="job-header">
+                            <div class="job-logo">
+                                <img src="/placeholder.svg?height=60&width=60" alt="Company Logo">
+                            </div>
+                            <div class="job-title-container">
+                                <h3>Marketing Manager</h3>
+                                <p class="job-company">Global Brands Ltd.</p>
+                            </div>
+                        </div>
+                        <div class="job-details">
+                            <div class="job-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>London, UK</span>
+                            </div>
+                            <div class="job-detail">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Full Time</span>
+                            </div>
+                            <div class="job-detail">
+                                <i class="fas fa-clock"></i>
+                                <span>Posted 1 week ago</span>
+                            </div>
+                        </div>
+                        <div class="job-tags">
+                            <span class="job-tag">Digital Marketing</span>
+                            <span class="job-tag">SEO</span>
+                            <span class="job-tag">Social Media</span>
+                        </div>
+                        <div class="job-footer">
+                            <span class="job-salary">$70,000 - $85,000</span>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="job-card">
+                        <div class="job-header">
+                            <div class="job-logo">
+                                <img src="/placeholder.svg?height=60&width=60" alt="Company Logo">
+                            </div>
+                            <div class="job-title-container">
+                                <h3>UX/UI Designer</h3>
+                                <p class="job-company">Creative Studio</p>
+                            </div>
+                        </div>
+                        <div class="job-details">
+                            <div class="job-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>San Francisco, USA</span>
+                            </div>
+                            <div class="job-detail">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Remote</span>
+                            </div>
+                            <div class="job-detail">
+                                <i class="fas fa-clock"></i>
+                                <span>Posted 3 days ago</span>
+                            </div>
+                        </div>
+                        <div class="job-tags">
+                            <span class="job-tag">Figma</span>
+                            <span class="job-tag">Adobe XD</span>
+                            <span class="job-tag">Sketch</span>
+                        </div>
+                        <div class="job-footer">
+                            <span class="job-salary">$75,000 - $90,000</span>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="job-card">
+                        <div class="job-header">
+                            <div class="job-logo">
+                                <img src="/placeholder.svg?height=60&width=60" alt="Company Logo">
+                            </div>
+                            <div class="job-title-container">
+                                <h3>Data Analyst</h3>
+                                <p class="job-company">Data Insights Co.</p>
+                            </div>
+                        </div>
+                        <div class="job-details">
+                            <div class="job-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Chicago, USA</span>
+                            </div>
+                            <div class="job-detail">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Full Time</span>
+                            </div>
+                            <div class="job-detail">
+                                <i class="fas fa-clock"></i>
+                                <span>Posted 5 days ago</span>
+                            </div>
+                        </div>
+                        <div class="job-tags">
+                            <span class="job-tag">SQL</span>
+                            <span class="job-tag">Python</span>
+                            <span class="job-tag">Tableau</span>
+                        </div>
+                        <div class="job-footer">
+                            <span class="job-salary">$65,000 - $80,000</span>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary">View All Jobs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Listings Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Listings</h2>
+                <p>Discover our handpicked selection of premium properties</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="property-card">
+                        <div class="property-img-container">
+                            <img src="/placeholder.svg?height=200&width=400" alt="Property" class="property-img">
+                            <span class="property-tag">For Sale</span>
+                            <span class="property-price">$850,000</span>
+                        </div>
+                        <div class="property-content">
+                            <h3 class="property-title">Modern Villa with Pool</h3>
+                            <div class="property-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Beverly Hills, CA</span>
+                            </div>
+                            <div class="property-features">
+                                <div class="property-feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>4 Beds</span>
+                                </div>
+                                <div class="property-feature">
+                                    <i class="fas fa-bath"></i>
+                                    <span>3 Baths</span>
+                                </div>
+                                <div class="property-feature">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>2,500 sqft</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="property-card">
+                        <div class="property-img-container">
+                            <img src="/placeholder.svg?height=200&width=400" alt="Property" class="property-img">
+                            <span class="property-tag">For Rent</span>
+                            <span class="property-price">$3,500/mo</span>
+                        </div>
+                        <div class="property-content">
+                            <h3 class="property-title">Luxury Apartment</h3>
+                            <div class="property-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Manhattan, NY</span>
+                            </div>
+                            <div class="property-features">
+                                <div class="property-feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>2 Beds</span>
+                                </div>
+                                <div class="property-feature">
+                                    <i class="fas fa-bath"></i>
+                                    <span>2 Baths</span>
+                                </div>
+                                <div class="property-feature">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>1,200 sqft</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="property-card">
+                        <div class="property-img-container">
+                            <img src="/placeholder.svg?height=200&width=400" alt="Property" class="property-img">
+                            <span class="property-tag">For Sale</span>
+                            <span class="property-price">$1,250,000</span>
+                        </div>
+                        <div class="property-content">
+                            <h3 class="property-title">Beachfront Condo</h3>
+                            <div class="property-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Miami Beach, FL</span>
+                            </div>
+                            <div class="property-features">
+                                <div class="property-feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>3 Beds</span>
+                                </div>
+                                <div class="property-feature">
+                                    <i class="fas fa-bath"></i>
+                                    <span>2 Baths</span>
+                                </div>
+                                <div class="property-feature">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>1,800 sqft</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary">View All Properties</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News & Articles Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Latest News & Articles</h2>
+                <p>Stay updated with the latest trends and insights</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="article-card">
+                        <div class="article-img-container">
+                            <img src="/placeholder.svg?height=200&width=400" alt="Article" class="article-img">
+                            <span class="article-category">Real Estate</span>
+                        </div>
+                        <div class="article-content">
+                            <div class="article-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>June 15, 2025</span>
+                            </div>
+                            <h3 class="article-title">10 Tips for First-Time Home Buyers</h3>
+                            <p class="article-excerpt">Buying your first home can be overwhelming. Here are expert tips to make the process smoother and more enjoyable.</p>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <img src="/placeholder.svg?height=30&width=30" alt="Author" class="author-img">
+                                    <span class="author-name">John Smith</span>
+                                </div>
+                                <div class="article-stats">
+                                    <div class="article-stat">
+                                        <i class="far fa-eye"></i>
+                                        <span>245</span>
+                                    </div>
+                                    <div class="article-stat">
+                                        <i class="far fa-comment"></i>
+                                        <span>18</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="article-card">
+                        <div class="article-img-container">
+                            <img src="/placeholder.svg?height=200&width=400" alt="Article" class="article-img">
+                            <span class="article-category">Travel</span>
+                        </div>
+                        <div class="article-content">
+                            <div class="article-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>June 10, 2025</span>
+                            </div>
+                            <h3 class="article-title">Best Summer Vacation Destinations</h3>
+                            <p class="article-excerpt">Discover the top destinations for your summer getaway, from tropical beaches to mountain retreats.</p>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <img src="/placeholder.svg?height=30&width=30" alt="Author" class="author-img">
+                                    <span class="author-name">Sarah Johnson</span>
+                                </div>
+                                <div class="article-stats">
+                                    <div class="article-stat">
+                                        <i class="far fa-eye"></i>
+                                        <span>312</span>
+                                    </div>
+                                    <div class="article-stat">
+                                        <i class="far fa-comment"></i>
+                                        <span>24</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="article-card">
+                        <div class="article-img-container">
+                            <img src="/placeholder.svg?height=200&width=400" alt="Article" class="article-img">
+                            <span class="article-category">Career</span>
+                        </div>
+                        <div class="article-content">
+                            <div class="article-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>June 5, 2025</span>
+                            </div>
+                            <h3 class="article-title">How to Ace Your Job Interview</h3>
+                            <p class="article-excerpt">Expert advice on preparing for job interviews, common questions, and making a lasting impression.</p>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <img src="/placeholder.svg?height=30&width=30" alt="Author" class="author-img">
+                                    <span class="author-name">Michael Brown</span>
+                                </div>
+                                <div class="article-stats">
+                                    <div class="article-stat">
+                                        <i class="far fa-eye"></i>
+                                        <span>189</span>
+                                    </div>
+                                    <div class="article-stat">
+                                        <i class="far fa-comment"></i>
+                                        <span>12</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Second Ad Banner Section -->
+    <section>
+        <div class="container">
+            <div class="ad-banner">
+                <img src="/placeholder.svg?height=200&width=1200" alt="Premium Membership" class="img-fluid">
+                <div class="ad-overlay">
+                    <h3 class="ad-title">Upgrade to Premium Membership</h3>
+                    <p class="ad-text">Get exclusive access to premium listings, priority customer support, and advanced search features.</p>
+                    <a href="#" class="ad-btn">Upgrade Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>From Our Blog</h2>
+                <p>Insights, tips, and trends from our experts</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="article-card mb-4">
+                        <div class="row g-0">
+                            <div class="col-md-5">
+                                <div class="article-img-container h-100">
+                                    <img src="/placeholder.svg?height=250&width=300" alt="Blog Post" class="article-img h-100">
+                                    <span class="article-category">Lifestyle</span>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="article-content">
+                                    <div class="article-date">
+                                        <i class="far fa-calendar-alt"></i>
+                                        <span>June 20, 2025</span>
+                                    </div>
+                                    <h3 class="article-title">The Rise of Smart Homes: What You Need to Know</h3>
+                                    <p class="article-excerpt">Smart home technology is revolutionizing the way we live. Learn about the latest innovations and how they can improve your daily life.</p>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="article-card mb-4">
+                        <div class="row g-0">
+                            <div class="col-md-5">
+                                <div class="article-img-container h-100">
+                                    <img src="/placeholder.svg?height=250&width=300" alt="Blog Post" class="article-img h-100">
+                                    <span class="article-category">Finance</span>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="article-content">
+                                    <div class="article-date">
+                                        <i class="far fa-calendar-alt"></i>
+                                        <span>June 18, 2025</span>
+                                    </div>
+                                    <h3 class="article-title">Investment Strategies for Real Estate in 2025</h3>
+                                    <p class="article-excerpt">Expert analysis on the real estate market trends and investment opportunities to watch for in the coming year.</p>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary">Visit Our Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Users Say</h2>
+                <p>Hear from our satisfied customers about their experiences</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <img src="/placeholder.svg?height=80&width=80" alt="User" class="testimonial-img">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">I found my dream home through this platform in just two weeks! The search filters were incredibly helpful, and the agent was professional and responsive.</p>
+                        <h4 class="testimonial-name">Jennifer Adams</h4>
+                        <p class="testimonial-position">Home Buyer</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <img src="/placeholder.svg?height=80&width=80" alt="User" class="testimonial-img">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">As a property manager, this platform has made listing and managing my properties so much easier. The dashboard is intuitive and the customer support is excellent.</p>
+                        <h4 class="testimonial-name">Robert Johnson</h4>
+                        <p class="testimonial-position">Property Manager</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <img src="/placeholder.svg?height=80&width=80" alt="User" class="testimonial-img">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">I've used many booking platforms before, but this one stands out for its user-friendly interface and comprehensive listings. Found a great vacation rental at an amazing price!</p>
+                        <h4 class="testimonial-name">Emily Chen</h4>
+                        <p class="testimonial-position">Frequent Traveler</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-5">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h2 class="footer-logo-text">Booking System</h2>
+                    </div>
+                    <div class="footer-about">
+                        <p>We are a premier booking platform connecting you with the best properties, jobs, and services worldwide. Our mission is to make finding what you need simple and enjoyable.</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-5">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Properties</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Jobs</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <h3 class="footer-title">Popular Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Real Estate</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Hotels & Resorts</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Restaurants</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Job Listings</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Events & Conferences</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Travel Packages</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="footer-contact-text">
+                            123 Booking Street, New York, NY 10001, USA
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="footer-contact-text">
+                            (+123) 123 456
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="footer-contact-text">
+                            info@bookingsystem.com
+                        </div>
+                    </div>
+                    <div class="footer-newsletter">
+                        <h3 class="footer-title">Newsletter</h3>
+                        <p>Subscribe to our newsletter for the latest updates</p>
+                        <div class="footer-newsletter-form">
+                            <input type="email" class="footer-newsletter-input" placeholder="Your Email">
+                            <button type="submit" class="footer-newsletter-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Booking System. All Rights Reserved. Designed by <a href="#">YourDesigner</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript for Animations -->
+    <script>
+        // Function to reset animations when boxes come into view
+        function animateBoxesOnScroll() {
+            const boxes = document.querySelectorAll('.feature-box');
+            
+            boxes.forEach((box, index) => {
+                // Remove animation classes
+                box.classList.remove('fade-in-up', 'fade-in-down', 'fade-in-left', 'fade-in-right');
+                
+                // Force reflow
+                void box.offsetWidth;
+                
+                // Add animation classes back with delay
+                setTimeout(() => {
+                    if (old === 0) box.classList.add('fade-in-up');
+                    if (old === 1) box.classList.add('fade-in-down');
+                    if (old === 2) box.classList.add('fade-in-left');
+                    if (old === 3) box.classList.add('fade-in-right');
+                }, old * 200);
+            });
+        }
+        
+        // Run animation on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            animateBoxesOnScroll();
+        });
+        
+        // Re-run animations when scrolling back to the section
+        const bannerSection = document.querySelector('.banner-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateBoxesOnScroll();
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(bannerSection);
+    </script>
+</body>
+</html>

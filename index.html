@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Karnali Hub</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="icon" href="./image/icons.svg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="top-bar py-2">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-4 d-flex align-items-center">
+                <i class="fas fa-phone me-2"></i>
+                <span>
+                    9818408094
+                </span>
+                <i class="fas fa-envelope ms-3 me-2"></i>
+                <span>
+                    <a href="mailto:info@karnalihub.com" class="text-decoration-none">
+                        info@karnalihub.com
+                    </a>
+                </span>
+            </div>
+            <div class="col-md-8 text-end settings-dropdown">
+                <div class="d-inline-block me-3">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="settingsDropdown"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user me-1"></i> Account
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingsDropdown">
+                            <li><a class="dropdown-item text-dark" href="#"><i
+                                    class="fas fa-sign-in-alt me-2"></i>Login</a></li>
+                            <li><a class="dropdown-item text-dark" href="#"><i
+                                    class="fas fa-user-plus me-2"></i>Register</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Header -->
+<header class="main-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-3 col-md-12">
+                <div class="logo">
+                    <a href="http://127.0.0.1:8000">
+                        <img src="image/logo.svg" alt="karnali hub">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <form action="" method="GET">
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" name="q" class="form-control search-bar"
+                               placeholder="Search for properties, hotels, or destinations..."
+                               value="">
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-3 col-md-12">
+                <div class="header-actions">
+                    <a href="" class="btn login-btn">
+                        <i class="fas fa-user me-2"></i> Sponsored Ads
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Navigation with Mega Menu -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="http://127.0.0.1:8000">
+                        <i class="fas fa-home me-1"></i> Home
+                    </a>
+                </li>
+
+                <!-- Browse Categories Mega Menu -->
+                <li class="nav-item mega-menu-container">
+                    <a class="nav-link" href="#" id="browseCategories">
+                        <i class="fas fa-th-large me-1"></i> Browse Categories
+                    </a>
+                    <div class="mega-menu">
+                        <div class="vertical-mega-menu">
+                            <div class="main-categories">
+                                <ul class="category-list" role="tablist">
+                                    <li class="category-item active"
+                                        data-category="category-1"
+                                        tabindex="0" role="tab"
+                                        aria-selected="true"
+                                        aria-controls="category-1-content">
+                                        <i class="fas fa-folder category-icon"></i>
+                                        <span>Real Estate</span>
+                                        <i class="fas fa-chevron-right arrow-icon"></i>
+                                    </li>
+                                    <li class="category-item "
+                                        data-category="category-4"
+                                        tabindex="0" role="tab"
+                                        aria-selected="false"
+                                        aria-controls="category-4-content">
+                                        <i class="fas fa-folder category-icon"></i>
+                                        <span>Vehicles</span>
+                                        <i class="fas fa-chevron-right arrow-icon"></i>
+                                    </li>
+                                    <li class="category-item "
+                                        data-category="category-2"
+                                        tabindex="0" role="tab"
+                                        aria-selected="false"
+                                        aria-controls="category-2-content">
+                                        <i class="fas fa-folder category-icon"></i>
+                                        <span>Hotels</span>
+                                        <i class="fas fa-chevron-right arrow-icon"></i>
+                                    </li>
+                                    <li class="category-item "
+                                        data-category="category-3"
+                                        tabindex="0" role="tab"
+                                        aria-selected="false"
+                                        aria-controls="category-3-content">
+                                        <i class="fas fa-folder category-icon"></i>
+                                        <span>Jobs</span>
+                                        <i class="fas fa-chevron-right arrow-icon"></i>
+                                    </li>
+                                    <li class="category-item "
+                                        data-category="category-5"
+                                        tabindex="0" role="tab"
+                                        aria-selected="false"
+                                        aria-controls="category-5-content">
+                                        <i class="fas fa-folder category-icon"></i>
+                                        <span>Consultancy</span>
+                                        <i class="fas fa-chevron-right arrow-icon"></i>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="subcategories">
+                                <div id="category-1-content"
+                                     class="subcategory-content active"
+                                     role="tabpanel"
+                                     aria-labelledby="category-1">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <ul class="subcategory-list">
+                                                <li><a href="#"> Homes  </a></li>
+                                                <li><a href="#"> Apartments  </a></li>
+                                                <li><a href="#"> Rooms  </a></li>
+                                                <li><a href="#"> Commercial  </a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="featured-content">
+                                                <h5 class="featured-title">Featured</h5>
+                                                <img src="./image/a.jpg"
+                                                     alt="Featured"
+                                                     class="featured-img">
+                                                <p class="featured-text">This is a featured item
+                                                    for Real Estate.</p>
+                                                <a href="#" class="featured-btn">View Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="category-4-content"
+                                     class="subcategory-content "
+                                     role="tabpanel"
+                                     aria-labelledby="category-4">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <ul class="subcategory-list">
+                                                <li><a href="#"> Cars  </a></li>
+                                                <li><a href="#"> Motorcycles  </a></li>
+                                                <li><a href="#"> Commercial Vehicles  </a></li>
+                                                <li><a href="#"> Rental Vehicles  </a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="featured-content">
+                                                <h5 class="featured-title">Featured</h5>
+                                                <img src="https://via.placeholder.com/250x150"
+                                                     alt="Featured"
+                                                     class="featured-img">
+                                                <p class="featured-text">This is a featured item
+                                                    for Vehicles.</p>
+                                                <a href="#" class="featured-btn">View Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="category-2-content"
+                                     class="subcategory-content "
+                                     role="tabpanel"
+                                     aria-labelledby="category-2">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <ul class="subcategory-list">
+                                                <li><a href="#"> Luxury Hotels  </a></li>
+                                                <li><a href="#"> Budget Hotels  </a></li>
+                                                <li><a href="#"> Resorts  </a></li>
+                                                <li><a href="#"> Homestays  </a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="featured-content">
+                                                <h5 class="featured-title">Featured</h5>
+                                                <img src="https://via.placeholder.com/250x150"
+                                                     alt="Featured"
+                                                     class="featured-img">
+                                                <p class="featured-text">This is a featured item
+                                                    for Hotels.</p>
+                                                <a href="#" class="featured-btn">View Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="category-3-content"
+                                     class="subcategory-content "
+                                     role="tabpanel"
+                                     aria-labelledby="category-3">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <ul class="subcategory-list">
+                                                <li><a href="#"> IT &amp; Software  </a></li>
+                                                <li><a href="#"> Sales &amp; Marketing  </a></li>
+                                                <li><a href="#"> Finance  </a></li>
+                                                <li><a href="#"> Healthcare  </a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="featured-content">
+                                                <h5 class="featured-title">Featured</h5>
+                                                <img src="./image/a.jpg"
+                                                     alt="Featured"
+                                                     class="featured-img">
+                                                <p class="featured-text">This is a featured item
+                                                    for Jobs.</p>
+                                                <a href="#" class="featured-btn">View Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="category-5-content"
+                                     class="subcategory-content "
+                                     role="tabpanel"
+                                     aria-labelledby="category-5">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <ul class="subcategory-list">
+                                                <li><a href="#"> Business Consulting  </a></li>
+                                                <li><a href="#"> Legal Services  </a></li>
+                                                <li><a href="#"> Financial Advisory  </a></li>
+                                                <li><a href="#"> IT Consulting  </a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="featured-content">
+                                                <h5 class="featured-title">Featured</h5>
+                                                <img src="./image/a.jpg"
+                                                     alt="Featured"
+                                                     class="featured-img">
+                                                <p class="featured-text">This is a featured item
+                                                    for Consultancy.</p>
+                                                <a href="#" class="featured-btn">View Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> About Us </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> Sponsored Ads </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> Blogs </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> News </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> Contact </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get all category items
+        const categoryItems = document.querySelectorAll('.category-item');
+
+        // Function to show subcategory content
+        function showSubcategory(categoryId) {
+            // Hide all subcategory content
+            const allSubcategories = document.querySelectorAll('.subcategory-content');
+            allSubcategories.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Show the selected subcategory content
+            const selectedContent = document.getElementById(`${categoryId}-content`);
+            if (selectedContent) {
+                selectedContent.classList.add('active');
+            }
+
+            // Update active state on category items
+            categoryItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-category') === categoryId) {
+                    item.classList.add('active');
+                }
+            });
+        }
+
+        // Add event listeners to each category item
+        categoryItems.forEach(item => {
+            // Mouse enter event for desktop
+            item.addEventListener('mouseenter', function () {
+                const categoryId = this.getAttribute('data-category');
+                showSubcategory(categoryId);
+            });
+
+            // Click event for mobile and accessibility
+            item.addEventListener('click', function (e) {
+                e.preventDefault();
+                const categoryId = this.getAttribute('data-category');
+                showSubcategory(categoryId);
+            });
+
+            // Keyboard accessibility
+            item.addEventListener('keydown', function (e) {
+                // Enter or Space key
+                if (e.keyCode === 13 || e.keyCode === 32) {
+                    e.preventDefault();
+                    const categoryId = this.getAttribute('data-category');
+                    showSubcategory(categoryId);
+                }
+            });
+        });
+
+        // Set first category as active by default
+        const firstCategory = document.querySelector('.category-item');
+        if (firstCategory) {
+            const categoryId = firstCategory.getAttribute('data-category');
+            showSubcategory(categoryId);
+        }
+
+        // Handle focus management for keyboard navigation
+        categoryItems.forEach((item, index) => {
+            item.addEventListener('keydown', function (e) {
+                // Down arrow key
+                if (e.keyCode === 40) {
+                    e.preventDefault();
+                    const nextIndex = index === categoryItems.length - 1 ? 0 : index + 1;
+                    categoryItems[nextIndex].focus();
+                }
+                // Up arrow key
+                else if (e.keyCode === 38) {
+                    e.preventDefault();
+                    const prevIndex = index === 0 ? categoryItems.length - 1 : index - 1;
+                    categoryItems[prevIndex].focus();
+                }
+            });
+        });
+
+        // Mobile menu handling
+        const browseCategories = document.getElementById('browseCategories');
+        const megaMenuContainer = document.querySelector('.mega-menu-container');
+
+        if (browseCategories && window.innerWidth < 992) {
+            browseCategories.addEventListener('click', function (e) {
+                e.preventDefault();
+                megaMenuContainer.classList.toggle('show');
+            });
+
+            // Close mega menu when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!megaMenuContainer.contains(e.target)) {
+                    megaMenuContainer.classList.remove('show');
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>
